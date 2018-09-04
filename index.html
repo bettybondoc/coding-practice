@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-width=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+
+	<title>Code Editor</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<!-- font awesome cdn -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+	<!-- import bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+	<!-- import custom css -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+	<div class="editors">
+		<div class="editor html">
+			<textarea id="html"></textarea>
+		</div>
+
+		<div class="editor css">
+			<textarea id="css"></textarea>
+		</div>
+
+		<div class="editor js">
+			<textarea id="js"></textarea>
+		</div>
+	</div>
+
+	<div id="run">RUN</div>
+
+	<hr>
+
+	<div class="browser">
+		<div id="browser">
+		</div>
+	</div>
+
+	<input value="</script>" class="tag" hidden>		
+
+	<!-- import jquery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<!-- import bootstrap js -->
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+	<!-- import custom js -->
+	<script type="text/javascript" src="js/script.js"></script>
+
+	<script type="text/javascript">
+		$("#run").click(function() {
+			var html = $('#html').val();
+			var css = $('#css').val();
+			var js = $('#js').val();
+			var tag = $('.tag').val();
+			var code = '<style>' + css + '</style>' + html + '<script>' + js + tag;
+			$("#browser").html(code);
+		});
+	</script>
+
+</body>
+</html>
